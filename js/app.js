@@ -5,8 +5,8 @@ function adicionar(){
     alert(quantidadeProdutos.value);
 
     let quantidade = document.createElement('span');
-    quantidade.className = 'texto azul';
-    quantidade.textContent = `${quantidadeProdutos.value}`;
+    quantidade.className = 'texto-azul';
+    quantidade.textContent = `${quantidadeProdutos.value}x`;
 
 
     let preco = document.createElement("span");
