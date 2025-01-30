@@ -1,25 +1,28 @@
-let produto = document.getElementById('produto');
+let produtoCarrinho = document.getElementById('produto');
 let carrinhoProdutos = document.querySelector('.carrinho__produtos__produto');
 let quantidadeProdutos = document.getElementById('quantidade');
-function adicionar(){ 
-    alert(quantidadeProdutos.value);
+function adicionar() {
+    alert(produto.value);
 
-    let quantidade = document.createElement('span');
-    quantidade.className = 'texto-azul';
-    quantidade.textContent = `${quantidadeProdutos.value}x`;
-
-
-    let preco = document.createElement("span");
-    preco.className = "texto-azul";
-    preco.textContent = "R$1400";
+    let spanProdutos = document.createElement('span');
+    spanProdutos.className = 'texto-azul';
+    spanProdutos.textContent = `${quantidadeProdutos.value}x`;
 
 
-    let textoProduto = document.createTextNode(" Celular ");
+    let spanPreco = document.createElement("span");
+    spanPreco.className = "texto-azul";
+    spanPreco.textContent = `${produtoCarrinho.value}`;
 
-    carrinhoProdutos.appendChild(quantidade);
-    carrinhoProdutos.appendChild(textoProduto);
-    carrinhoProdutos.appendChild(preco);
-    carrinhoProdutos.appendChild(document.createElement("br"));
 
-     
+    //let textoProduto = document.createTextNode(" Celular ");
+    //let multiplicacao = document.createTextNode(" x ");
+
+
+    carrinhoProdutos.appendChild(spanProdutos);
+    carrinhoProdutos.appendChild(spanPreco);
+
+
+    spanPreco.appendChild(document.createElement("br"));
+
+
 }
