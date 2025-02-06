@@ -12,8 +12,11 @@ function adicionar() {
     //alert(quantidade);
     //lert(produto);
     //alert(quantidade);
-    if (quantidade == ""| quantidade == 0) {
+    if (quantidade == "" | quantidade == 0) {
         alert('Digite a quantidade!')
+        if (quantidade > 20) {
+            alert('limite excedido')
+        }
     } else {
 
         let spanQuantidadeProdutos = document.createElement('span');
@@ -27,11 +30,6 @@ function adicionar() {
         spanValorUnitario.className = "texto-azul";
         spanValorUnitario.textContent = `R$${valorUnitario}`;
 
-
-        //let textoProduto = document.createTextNode(" Celular ");
-        //let multiplicacao = document.createTextNode(" x ");
-
-
         carrinhoProdutos.appendChild(spanQuantidadeProdutos);
         carrinhoProdutos.appendChild(spanPreco);
         carrinhoProdutos.appendChild(spanValorUnitario);
@@ -41,4 +39,8 @@ function adicionar() {
 
 
     }
+}
+function limpar() {
+    let carrinhoProdutos = document.querySelector('.carrinho__produtos__produto');
+    carrinhoProdutos.innerHTML = '';
 }
