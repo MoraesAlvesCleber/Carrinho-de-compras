@@ -1,10 +1,20 @@
 
+function multiplicar() {
+   
+    let quantidade = parseFloat(document.getElementById('quantidade').value);
+    
+ 
+
+    return quantidade * valorUnitario;
+}
+
+
 function adicionar() {
 
     let produto = document.getElementById('produto').value;
     let nomeProduto = produto.split('-')[0];
-    let valorUnitario = produto.split('R$')[1];
-    let quantidade = document.getElementById('quantidade').value;
+    let valorUnitario = parseFloat( produto.split('R$')[1]);
+    let quantidade = parseFloat(document.getElementById('quantidade').value);
     let carrinhoProdutos = document.querySelector('.carrinho__produtos__produto');
 
     //alert(nomeProduto);
@@ -36,6 +46,8 @@ function adicionar() {
 
 
         spanValorUnitario.appendChild(document.createElement("br"));
+        multiplicar();
+        alert(multiplicar());
 
 
     }
@@ -44,3 +56,4 @@ function limpar() {
     let carrinhoProdutos = document.querySelector('.carrinho__produtos__produto');
     carrinhoProdutos.innerHTML = '';
 }
+ 
