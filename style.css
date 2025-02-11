@@ -112,6 +112,9 @@ input[type="number"] {
   
   background: url('./assets/arrow-down.svg') no-repeat right 1rem top 50%;
 }
+.erro{
+  color: red;
+}
 
 .dropdown {
   width: 3.375rem;

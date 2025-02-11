@@ -1,21 +1,18 @@
 
 function adicionar() {
     let quantidade = parseFloat(document.getElementById('quantidade').value);
+    let mensagemErro = document.getElementById('mensagem-erro');
 
     if (isNaN(quantidade) || quantidade === 0) {
-        alert('Digite a quantidade!');
+        mensagemErro.textContent = "Digite a quantidade!";
         return;
     }
     if (quantidade > 10) {
-        alert('Quantidade não pode ser maior que 10.');
+        mensagemErro.textContent = "Máximo 10."
         return;
     } else {
         let produto = document.getElementById('produto').value;
-        let valorUnitario = parseFloat(produto.split('R$')[1]);
-
         let nomeProduto = produto.split('-')[0];
-
-
         let carrinhoProdutos = document.querySelector('.carrinho__produtos__produto');
 
         //alert(nomeProduto);
@@ -42,6 +39,7 @@ function adicionar() {
 
         spanValorUnitario.appendChild(document.createElement("br"));
         carrinho();
+        mensagemErro.textContent = "";
 
     }
 }
@@ -53,10 +51,14 @@ function multiplicar() {
     return quantidade * valorUnitario;
 }
 function limpar() {
+    let mensagemErro = document.getElementById('mensagem-erro');
     let carrinhoProdutos = document.querySelector('.carrinho__produtos__produto');
     let valorTotalElemento = document.getElementById('valor-total'); 
+    let quantidade =document.getElementById('quantidade');
     valorTotalElemento.innerHTML = '';
     carrinhoProdutos.innerHTML = '';
+    quantidade.value = '';
+    mensagemErro.textContent = "";
 }
 function carrinho() {
     let valorTotalElemento = document.getElementById('valor-total'); // Pegando o elemento correto
